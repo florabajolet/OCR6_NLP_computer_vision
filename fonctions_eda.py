@@ -141,14 +141,16 @@ def display_eigenvalues(cpa, annotate=True):
     y2 = scree.cumsum()
 
     p1 = ax.bar(x, y1, label="% pour l'axe")
-    p2 = ax.plot(x, y2,c="red",marker='o', label="% cumulé")
-    
-    ax.bar_label(p1, fmt='%.1f', size=13)          
+    p2 = ax.plot(x, y2,c="red",marker='o', label="% cumulé")        
 
     if annotate:
+        ax.bar_label(p1, fmt='%.1f', size=13)
+
         for i,j in zip(x, y2):
             ax.annotate(f"{j:.1f}", xy=(i,j), ha="center", size=13, xytext=(-7, 9), textcoords='offset points')
-    
+    else:
+        ax.bar_label(p1)
+
     ax.set_xlabel("Rang de l'axe d'inertie", fontsize=14)
     ax.set_ylabel("Pourcentage d'inertie expliqué", fontsize=14)
     ax.legend(fontsize=13)

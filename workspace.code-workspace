@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "..\\Projet5"
+		},
+		{
+			"path": "..\\Projet4"
+		},
+		{
+			"path": "..\\Notebooks"
+		},
+		{
+			"path": "..\\Projet3"
+		},
+		{
+			"path": "..\\Projet2"
+		},
+		{
+			"path": "..\\Projet6"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"jupyter.jupyterServerType": "local"
+	}
+}

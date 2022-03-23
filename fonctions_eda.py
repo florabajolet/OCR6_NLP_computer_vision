@@ -37,12 +37,19 @@ def info_data_multi(list_df, list_df_names, list_subsets=None):
     col = []
     sizes = []
     dupli = []
-    for df, sub in zip(list_df, list_subsets):
-        lines.append(df.shape[0])
-        col.append(df.shape[1])
-        sizes.append(df.size)
-        if list_subsets:
+
+    if list_subsets:
+        for df, sub in zip(list_df, list_subsets):
+            lines.append(df.shape[0])
+            col.append(df.shape[1])
+            sizes.append(df.size)
             dupli.append(df.duplicated(subset=[sub]).sum())
+    else:
+        for df in list_df:
+            lines.append(df.shape[0])
+            col.append(df.shape[1])
+            sizes.append(df.size)
+            dupli.append(None)
     lines = pd.Series(lines, index=list_df_names)
     col = pd.Series(col, index=list_df_names)
     sizes = pd.Series(sizes, index=list_df_names)

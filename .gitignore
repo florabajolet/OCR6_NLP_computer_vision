@@ -1,5 +1,6 @@
 *.pptx
 *.code-workspace
+test*
 /fig
 /.ipynb_checkpoints
 /__pycache__
